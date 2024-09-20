@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ContentProjection } from './content-projection.component';
-
+import { DefaultContentProjection } from './components/default-content-projection.component';
+import { NamedContentProjection } from './components/named-content-projection.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContentProjection],
+  imports: [RouterOutlet, DefaultContentProjection, NamedContentProjection],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

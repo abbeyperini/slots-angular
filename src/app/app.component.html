@@ -1,9 +1,17 @@
 <main class="main">
-  <div class="content">
-    <h1>Hello, {{ title }}</h1>
-    <p>Congratulations! Your app is running. 🎉</p>
-  </div>
-  <content-projection></content-projection>
+  <default-content-projection>
+    <!-- <p>the club</p> -->
+  </default-content-projection>
+  <!-- <named-content-projection>
+    <p class="the-window">THE WINDOW</p>
+    <p>the club</p>
+    <p class="the-wall">THE WALL</p>
+  </named-content-projection> -->
+  <!-- <named-content-projection>
+    <h3 ngProjectAs="the-window">THE WINDOW</h3>
+    <p>the club</p>
+    <h3 ngProjectAs="the-wall">THE WALL</h3>
+  </named-content-projection> -->
 </main>
 
 <router-outlet />
