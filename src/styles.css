@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  background-color: #D1CFE2;
+  background-color: #B8C0FF;
   color: #0f0f0ff7;
 }
 
@@ -16,9 +16,10 @@ img {
 }
 
 h2 {
-  font-size: 8em;
+  font-size: 6em;
 }
 
 p {
-  font-size: 6rem;
+  font-size: 4rem;
+  margin: 1rem;
 }
