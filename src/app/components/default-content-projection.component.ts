@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 
 @Component({
-  standalone: true,
   selector: "default-content-projection",
   template: `<div class="club-container">
       <img src="/the-window.jpg" alt="the window" />
