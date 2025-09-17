@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-
 @Component({
   selector: 'the-wall',
   template: `<ng-content>The Wall</ng-content>`,
@@ -16,6 +15,7 @@ export class TheWindow {}
       <ng-content select="the-window"></ng-content>
       <ng-content><img src="confused-lil-jon.jpg" alt="lil jon saying 'what?!'" /></ng-content>
       <ng-content select="the-wall"></ng-content>
-    </div>`
+      <ng-content select="[title='select me']"></ng-content>
+    </div>`,
 })
 export class NamedContentProjection { }
