@@ -12,9 +12,9 @@ export class TheWindow {}
 @Component({
   selector: "named-content-projection",
   template: `<div class="club-container">
-      <ng-content select="the-window"></ng-content>
+      <ng-content select="the-window">The Window</ng-content>
       <ng-content><img src="confused-lil-jon.jpg" alt="lil jon saying 'what?!'" /></ng-content>
-      <ng-content select="the-wall"></ng-content>
+      <ng-content select="the-wall">The Wall</ng-content>
       <ng-content select="[title='select me']"></ng-content>
     </div>`,
 })
