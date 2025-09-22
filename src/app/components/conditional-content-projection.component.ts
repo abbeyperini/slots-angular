@@ -10,7 +10,7 @@ import { NgTemplateOutlet } from "@angular/common";
 })
 export class InTheClub {
   private viewContainer = inject(ViewContainerRef);
-  people = input<string>();
+  people = input<string | undefined>();
   showPeople = input<boolean>(false);
   lilJon = viewChild<TemplateRef<unknown>>("lilJon");
   peopleInTheClub = viewChild<TemplateRef<unknown | undefined>>("peopleInTheClub");
@@ -31,7 +31,7 @@ export class InTheClub {
     <ng-template #peopleInTheClub [let-people]="people" ><img [src]="people()" alt="people in the club" /></ng-template>
     <ng-container *ngTemplateOutlet="lilJon"></ng-container>
     <!-- <ng-container [ngTemplateOutlet]="peopleInTheClub" [ngTemplateOutletContext]="people" class="club-container"></ng-container> -->
-    <!-- <in-the-club [showPeople]="false" people="/club-people.jpeg"></in-the-club> -->
+    <!-- <in-the-club [showPeople]="false" [people]="people()"></in-the-club> -->
     <img src="/the-wall.png" alt="the wall" />
   </div>`
 })
