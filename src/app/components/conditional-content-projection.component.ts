@@ -29,9 +29,9 @@ export class InTheClub {
     <img src="/the-window.jpg" alt="the window" />
     <ng-template #lilJon><img src="confused-lil-jon.jpg" alt="lil jon saying 'what?!'" /></ng-template>
     <ng-template #peopleInTheClub [let-people]="people" ><img [src]="people()" alt="people in the club" /></ng-template>
-    <ng-container *ngTemplateOutlet="lilJon"></ng-container>
+    <!-- <ng-container *ngTemplateOutlet="lilJon"></ng-container> -->
     <!-- <ng-container [ngTemplateOutlet]="peopleInTheClub" [ngTemplateOutletContext]="people" class="club-container"></ng-container> -->
-    <!-- <in-the-club [showPeople]="false" [people]="people()"></in-the-club> -->
+    <in-the-club [showPeople]="true" [people]="people()"></in-the-club>
     <img src="/the-wall.png" alt="the wall" />
   </div>`
 })
