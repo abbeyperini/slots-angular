@@ -2,7 +2,7 @@
 
 Vue examples for Slots, Slots, Slots Everybody! Talk
 
-- Netlify Compose 10/03/2024
+This uses v20. I checked v21 and v22 release notes for updates to these features, and didn't see any.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
 
