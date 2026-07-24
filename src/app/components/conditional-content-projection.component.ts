@@ -4,20 +4,26 @@ import { NgTemplateOutlet } from "@angular/common";
 @Component({
   selector: "in-the-club",
   template: `
+    <!--Template Fragments-->
     <ng-template #lilJon><img src="confused-lil-jon.jpg" alt="lil jon saying 'what?!'" /></ng-template>
     <ng-template #peopleInTheClub [let-people]="people" ><img [src]="people()" alt="people in the club" /></ng-template>
   `
 })
 export class InTheClub {
+  /* Create viewContainer, a node in Angular's component tree that can contain content */
   private viewContainer = inject(ViewContainerRef);
+  /* Get parameters */
   people = input<string | undefined>();
   showPeople = input<boolean>(false);
+  /* Grab references to template fragments */
   lilJon = viewChild<TemplateRef<unknown>>("lilJon");
   peopleInTheClub = viewChild<TemplateRef<unknown | undefined>>("peopleInTheClub");
   ngOnInit() {
     if (this.showPeople()) {
+      /* Dynamically render a template fragment and pass parameter in context object */
       this.viewContainer.createEmbeddedView(this.peopleInTheClub()!, {people: this.people });
     } else {
+      /* Dynamically render a template fragment */
       this.viewContainer.createEmbeddedView(this.lilJon()!);
     }
   }
@@ -27,10 +33,13 @@ export class InTheClub {
   imports: [NgTemplateOutlet, InTheClub],
   template: `<div class="club-container">
     <img src="/the-window.jpg" alt="the window" />
+    <!--Template Fragments-->
     <ng-template #lilJon><img src="confused-lil-jon.jpg" alt="lil jon saying 'what?!'" /></ng-template>
     <ng-template #peopleInTheClub [let-people]="people" ><img [src]="people()" alt="people in the club" /></ng-template>
+    <!--Rendering template fragment using directive-->
     <ng-container *ngTemplateOutlet="lilJon"></ng-container>
-    <!-- <ng-container [ngTemplateOutlet]="peopleInTheClub" [ngTemplateOutletContext]="people" class="club-container"></ng-container> -->
+    <!--Binding template fragment to ngTemplateOutlet input and binding context object to ngTemplateOutletContext input-->
+    <!-- <ng-container [ngTemplateOutlet]="peopleInTheClub" [ngTemplateOutletContext]="{people: people}" class="club-container"></ng-container> -->
     <!-- <in-the-club [showPeople]="false" [people]="people()"></in-the-club> -->
     <img src="/the-wall.png" alt="the wall" />
   </div>`
